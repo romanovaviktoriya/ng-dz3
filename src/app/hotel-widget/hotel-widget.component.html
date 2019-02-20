@@ -1,0 +1,31 @@
+<div class="element-bg-img"><img [src]=widgetImage alt="" class="img-responsive"></div>
+  <div class="element-left-bottom">
+    <div class="ele-strip">
+      <ul>
+          <li *ngFor="let t of (widget| unique: 'type')"><a href="" (click)="onTypeSelect(t)">{{ t }}</a></li>
+      </ul>
+    </div>
+    <div class="village">
+      <h3>Righteous indignation & like</h3>
+      <span class="line"> </span>
+      <div class="activity_box">
+        <div class="scrollbar" id="style-2">
+          <div class="activity-row" *ngFor="let dataItem of filtered; index as i" (click)="onClick(i)">
+            <div class="activity-desc">
+              <h5>{{ dataItem.hotel.address }}</h5>
+              <p>Lovely place</p>
+              <p>{{ dataItem.hotel.address }}</p>
+              <h6>Tel: +{{ dataItem.hotel.phone | phone }}</h6>
+            </div>
+            <div class="activity-img">
+              <ul>
+                <li><img [src]=dataItem.hotel.img width="50" height="50" alt=""/></li>
+                <li><img [src]=dataItem.voluptatem.img width="50" height="50" alt=""/></li>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
