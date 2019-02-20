@@ -1,12 +1,11 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
 	<div class="element-left">
-    <app-hotel-widget (selectedHotel)="changeSelectItem($event)"></app-hotel-widget>
+    <app-hotel-widget (hotelSelect)="shareSelectedItem($event)"></app-hotel-widget>
 	  </div>
 		<div class="element-right">
-      {{selectedWeather}}
-			<app-weather-widget [Weather]="selectedWeather"></app-weather-widget>
-			<app-voluptatem-widget [Voluptatem]="selectedVoluptatem"></app-voluptatem-widget>
+			<app-weather-widget [weather]="selectedWeather"></app-weather-widget>
+			<app-voluptatem-widget [voluptatem]="selectedVoluptatem"></app-voluptatem-widget>
 		</div>
 	  <div class="clear"> </div>
 </div>

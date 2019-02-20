@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { data, Voluptatem, Weather } from './common/mock/data';
+import { data, IHotel, IVoluptatem, IWeather } from './common/mock/data';
 
 @Component({
     selector: 'app-root',
@@ -8,15 +8,16 @@ import { data, Voluptatem, Weather } from './common/mock/data';
 })
 export class AppComponent implements OnInit {
     public hotels = data;
-    public selectedWeather: Weather;
-    public selectedVoluptatem: Voluptatem;
+    public selectedWeather: IWeather;
+    public selectedVoluptatem: IVoluptatem;
 
     public ngOnInit(): void {
 
     }
 
-    changeSelectItem(selectedHotel: { weather: Weather, voluptatem: Voluptatem }) {
+    shareSelectedItem(selectedHotel: { weather: IWeather, voluptatem: IVoluptatem }) {
         this.selectedWeather = selectedHotel.weather;
         this.selectedVoluptatem = selectedHotel.voluptatem;
+        console.log('changeSelectItem(): selectedWeather = ' + this.selectedWeather);
     }
 }

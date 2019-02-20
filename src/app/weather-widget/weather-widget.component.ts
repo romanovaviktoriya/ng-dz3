@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Weather } from './../common/mock/data';
+import { IWeather } from './../common/mock/data';
 
 @Component({
   selector: 'app-weather-widget',
@@ -8,7 +8,7 @@ import { Weather } from './../common/mock/data';
 })
 export class WeatherWidgetComponent implements OnInit {
 
-  @Input() Weather: Weather;
+  @Input() weather: IWeather;
 
   constructor() { }
 

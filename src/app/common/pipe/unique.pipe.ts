@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Widget } from './../mock/data';
+import { IWidget } from './../mock/data';
 
 @Pipe({
   name: 'unique'
@@ -7,7 +7,7 @@ import { Widget } from './../mock/data';
 export class UniquePipe implements PipeTransform {
 
   transform(widget: any, key: any): any {
-    const types  = widget.map((dataItem: Widget) => {
+    const types  = widget.map((dataItem: IWidget) => {
       const type = dataItem[key].split('');
       return type[0].toUpperCase() + type.splice(1).join('');
     });

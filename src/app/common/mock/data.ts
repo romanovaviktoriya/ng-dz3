@@ -1,53 +1,34 @@
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-/*export interface IHotel = {
-  img: string,
-  address: string,
-  phone:  number,
-  weather: {
-    title: string,
-    icon: string,
-    water: number,
-    temperature: number
-  },
-  social_info: {
-    title: string,
-    img: string,
-    followers: number,
-    following: number
-  },
-  type: string
-};*/
-
-export interface Hotel {
+export interface IHotel {
   img: string;
   address: string;
   phone: number;
 }
 
-export interface Weather {
+export interface IWeather {
   title: string;
   icon: string;
   water: number;
   temperature: number;
 }
 
-export interface Voluptatem {
+export interface IVoluptatem {
   title: string;
   img: string;
   followers: number;
   following: number;
 }
 
-export interface Widget {
-  hotel: Hotel;
-  weather: Weather;
-  voluptatem: Voluptatem;
+export interface IWidget {
+  hotel: IHotel;
+  weather: IWeather;
+  voluptatem: IVoluptatem;
   type: string;
 }
 
-export const data: Widget[] = [
+export const data: IWidget[] = [
   {
     hotel: {
       img: 'assets/images/novoross.jpg',
@@ -56,7 +37,7 @@ export const data: Widget[] = [
     },
     weather: {
       title: 'Солнечно',
-      icon: 'assets/images/cloudy.png',
+      icon: 'sunny',
       water: 20,
       temperature: 14
     },
@@ -76,7 +57,7 @@ export const data: Widget[] = [
     },
     weather: {
       title: 'Не жарко...',
-      icon: 'assets/images/cloudy.png',
+      icon: 'sunny',
       water: 0,
       temperature: -4
     },
@@ -86,7 +67,7 @@ export const data: Widget[] = [
       followers: 1550,
       following: 19005
     },
-    type: 'old'
+    type: 'hero'
   },
   {
     hotel: {
@@ -96,7 +77,7 @@ export const data: Widget[] = [
     },
     weather: {
       title: 'Прохладно',
-      icon: 'assets/images/cloudy.png',
+      icon: 'cloud',
       water: 5,
       temperature: 2
     },
@@ -116,7 +97,7 @@ export const data: Widget[] = [
     },
     weather: {
       title: 'Прохладно',
-      icon: 'assets/images/cloudy.png',
+      icon: 'cloud',
       water: 15,
       temperature: 12
     },
@@ -130,5 +111,5 @@ export const data: Widget[] = [
   }
 ];
 
-export const data$: Observable<Widget[]> = of(data)
+export const data$: Observable<IWidget[]> = of(data)
   .pipe(delay(3000));
